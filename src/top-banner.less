@@ -1,0 +1,86 @@
+@largestMobileScreen: 700px;
+
+.top-banner-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  line-height: 22px;
+  min-height: 60px;
+  height: var(--top-banner-height-in-view);
+
+  .content-container {
+    margin-top: 19px;
+    margin-bottom: 19px;
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: center;
+    
+
+    @media only screen and (max-width: @largestMobileScreen) {
+      margin-left: 34px;
+      margin-right: 34px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    & > * {
+      display: inline;
+    }
+  }
+
+  .top-banner-image {
+    max-height: 30px;
+    margin-right: 14px;
+    vertical-align: text-bottom;
+  }
+
+  .top-banner-main-content {
+    font-style: italic;
+  }
+
+  pre {
+    margin: 0;
+  }
+
+  .close-button-wrapper {
+    position: absolute;
+    top: 9px;
+    right: 0;
+
+    @media only screen and (min-width: @largestMobileScreen) {
+      top: 15px;
+      right: 15px;
+    }
+  }
+
+  .cancel {
+    & > svg > path {
+      fill: var(--top-banner-text-color);
+    }
+
+    @media only screen and (max-width: @largestMobileScreen) {
+      width: 44px;
+      height: 44px;
+
+      &:hover {
+        background: initial;
+      }
+
+      &:active {
+        background: initial;
+      }
+    }
+
+    @media only screen and (min-width: @largestMobileScreen) {
+      &:hover {
+        background: var(--close-btn-hover-background);
+      }
+
+      &:active {
+        background: var(--close-btn-active-background);
+      }
+    }
+  }
+}

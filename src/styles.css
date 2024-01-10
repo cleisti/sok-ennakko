@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Custom classeja - nämä voisi mieluummin olla tailwind.configissa */
+
+@layer components {
+  .text-default-grey {
+    color: #1F1F1F;
+  }
+  .font-orleans {
+    font-family: Orleans;
+  }
+  /* Ei löytynyt S Bonus fonttia Googlesta joten Helveticalla mennään */
+  .font-s-bonus {
+    font-family: Helvetica;
+  }
+  .bg-grey {
+    background: var(--background-weakest-grey, #FAFAFA);
+  }
+  .bg-blue {
+    background: rgba(182, 223, 247, 0.50);
+  }
+  .bg-green {
+    background: var(--text-strong-primary, #007841);
+  }
+  .text-green {
+    color: var(--brand-color-element-green, #00A549);
+  }
+  .text-dark {
+    color: #1F1F1F;
+  }
+  .text-light {
+    color: var(--text-inverse-grey, #FFF);
+  }
+  .text-xs {
+    font-size: 12px;
+  }
+  .text-s {
+    font-size: 16px;
+  }
+}
+
+
+/* Yleisiä */
+
+#root {
+  @apply flex flex-col items-center max-w-full;
+}
+
+html, body {
+  @apply h-full w-full;
+  font-family: Grifo S;
+}
+
+.container {
+  @apply mb-40 pt-16 bg-white max-w-full;
+}
+
+.banner {
+  @apply w-full absolute top-0 left-0;
+}
+
+h2 {
+  @apply text-default-grey text-center font-orleans text-5xl font-normal py-4 px-2 break-words;
+}
+
+.page {
+  @apply ml-0 mr-0 flex items-center flex-col;
+
+  @screen sm {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+
+  @screen md {
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+
+  @screen lg {
+    margin-left: 9.5rem;
+    margin-right: 9.5rem;
+  }
+
+  @screen xl {
+    margin-left: 18rem;
+    margin-right: 18rem;
+  }
+}
+
+.body-text {
+  @apply p-2 text-dark text-base font-normal leading-8 w-full;
+  max-width: 794px;
+  flex-grow: 1;
+
+  @screen sm {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  @screen md {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  @screen lg {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @screen xl {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+
+/* BlogPost */
+
+.blog-heading {
+  @apply flex flex-col;
+}
+
+.subheading {
+  @apply text-default-grey text-center text-4xl font-medium leading-9 px-4 pb-3;
+}
+
+.main-image {
+  @apply max-w-full;
+}
+
+.img-text {
+  @apply text-default-grey font-normal text-xs leading-3;
+}
+
+.text-sans {
+  @apply text-default-grey font-normal text-s leading-4;
+}
+
+.grey-box {
+  @apply flex p-2 flex-col items-start self-stretch rounded-lg bg-grey mb-1;
+}
+
+.text-bold-green {
+  @apply text-green text-center text-base font-medium leading-6;
+}
+
+
+/* CTASection */
+
+.cta-box-text {
+  @apply font-s-bonus text-black text-center text-4xl font-medium leading-8;
+}
+
+.cta-text-padding {
+  @apply py-4 px-2 block;
+}
+
+.cta-box-text-light {
+  @apply font-s-bonus text-default-grey text-center text-base font-normal leading-4;
+}
+
+.cta-box {
+  @apply flex px-4 py-6 flex-col items-center self-stretch rounded-md bg-blue w-full;
+}
+
+.cta-button {
+  @apply flex py-3 px-8 justify-center items-center rounded-full bg-green;
+}
+
+.cta-button span {
+  @apply font-s-bonus text-light text-center text-lg font-medium leading-8;
+}
+
